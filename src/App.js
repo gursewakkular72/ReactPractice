@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import React, { useState } from "react";
+import Dashboard from "./Dashboard";
+import UserDetails from "./Store/UserDetails";
+// import { Reducer } from "./Reducer";
 
 function App() {
+  const [title, setTitle] = useState("Home");
+  const [userName, setUserName] = useState("John Doe");
+  const [id, setId] = useState("123");
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello World</h1>
+      <UserDetails.Provider
+        value={{
+          name: "Jones Smith",
+          age: "29",
+          location: "Burnaby",
+        }}
+      >
+        <Dashboard {...{ title, userName, id }}></Dashboard>
+      </UserDetails.Provider>
+
+      {/* To reducer in action, un-comment the following line */}
+      {/* <Reducer></Reducer> */}
     </div>
   );
 }
