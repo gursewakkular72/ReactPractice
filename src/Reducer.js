@@ -1,6 +1,6 @@
 import React, { useReducer } from "react";
 
-// intial value for the counter. without the 'init' function this would be assinged to the counter otherwise, it would be the value returned by the counter.
+// intial value for the counter. Without the 'init' function this would be assinged to the counter otherwise, it would be the value returned by the init function.
 let initialCount = 0;
 
 /// reducer accepts two paramaters: the previous State of the counter and the actions object.
